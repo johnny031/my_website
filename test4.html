@@ -1,0 +1,27 @@
+{% extends "test4layout.html" %}
+
+{% block heading %}
+Welcome!
+{% endblock %}
+
+{% block paragraph %}
+This is my website!
+{% endblock %}
+
+{% block contentheading %}
+Don't waste your time on my website!
+{% endblock %}
+
+{% block content %}
+Do something meaningful!
+<ul>
+     {% for n in notes %}
+    <li>{{ n }}</li>
+    {% endfor %}
+</ul>
+
+<form action="{{ url_for('addnote') }}" method="POST">
+    <input type="text" name="name" placeholder="Add note here!">
+    <button>add note!</button>
+</form>
+{% endblock %}
